@@ -4,7 +4,7 @@ public class ShopRepository {
     private Product[] products = new Product[0];
 
     private Product[] addToArray(Product[] current, Product product) {
-        if(this.findById(product.getId()) != null) {
+        if (this.findById(product.getId()) != null) {
             throw new AlreadyExistsException(
                     "Product with ID already exist " + product.getId()
             );
@@ -26,7 +26,7 @@ public class ShopRepository {
     }
 
     public void remove(int id) {
-        if(findById(id) == null) {
+        if (findById(id) == null) {
             throw new NotFoundException(
                     "Element with not found id: " + id
             );
@@ -43,7 +43,7 @@ public class ShopRepository {
     }
 
     public Product findById(int id) {
-        for (Product product: products) {
+        for (Product product : products) {
             if (product.getId() == id) {
                 return product;
             }
